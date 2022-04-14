@@ -1,1 +1,5 @@
+name: ci/cd pipeline
 
+on: [push]
+
+jobs: 
