@@ -16,7 +16,7 @@ jobs:
      username: root
      key: ${{secrets.SERVER_SECRET}}
      port: 22
-     scripts: |
+     script: |
       cd /root/repodata
       git pull origin main
       git status
