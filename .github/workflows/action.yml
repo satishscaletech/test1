@@ -12,9 +12,9 @@ jobs:
   - name: ssh connection
     uses: appleboy/ssh-action@master
     with:
-     host: 45.80.181.227
-     username: root
-     key: ${{secrets.SERVER_SECRET}}
+     host: ${{ secrets.HOST }}
+     username: ${{ secrets.USER_NAME }}
+     password: ${{ secrets.PASSWORD }}
      port: 22
      script: |
       cd /root/repodata
