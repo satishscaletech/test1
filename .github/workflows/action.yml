@@ -4,13 +4,13 @@ on:
  push:
   branches: [main]
 
-jobes:
+jobs:
  job_one:
   name: Deploy
   runs-on: ubuntu-latest
   steps:
   - name: ssh connection
-    usage: appleboy/ssh-action@master
+    uses: appleboy/ssh-action@master
     with:
      host: 45.80.181.227
      username: root
