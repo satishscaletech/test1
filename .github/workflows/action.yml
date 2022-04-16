@@ -1,5 +1,22 @@
-name: ci/cd pipeline
+name: CI/CD 
 
-on: [push]
+on:
+ push:
+  branches: [main]
 
-jobs: 
+jobes:
+ job_one:
+  name: Deploy
+  runs-on: ubuntu-latest
+  steps:
+  - name: ssh connection
+    usage: appleboy/ssh-action@master
+    with:
+     host: 45.80.181.227
+     username: root
+     key: ${{secrets.SERVER_SECRET}}
+     port: 22
+     scripts: 
+      cd /root/repodata
+      git pull origin main
+      git status
